@@ -1,12 +1,8 @@
 # G+ TikTok Downloader
 <img width="612" height="905" alt="image" src="https://github.com/user-attachments/assets/1031bb20-cc97-4582-9658-e04244cc75dd" />
-
-A Tampermonkey userscript that adds download functionality to TikTok. It allows you to download videos and photo slide posts in HD, without watermarks.
-
-The script integrates seamlessly into the TikTok UI by adding a download button next to the native action buttons (Heart, Comment, Share).
 <img width="503" height="118" alt="image" src="https://github.com/user-attachments/assets/ae912d6d-a350-4a06-90f1-1ee5d5e725f2" />
 <img width="1522" height="876" alt="image" src="https://github.com/user-attachments/assets/f226037d-61e9-49f4-834e-119e0070bd33" />
-
+A Tampermonkey userscript that adds download functionality to TikTok. It allows you to download videos and photo slide posts in HD, without watermarks.
 ## Features
 - **HD Downloads**: Fetches 1080p source videos via the `tikwm.com` API.
 - **No Watermarks**: Videos are saved without the TikTok logo.
