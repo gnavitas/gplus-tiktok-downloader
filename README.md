@@ -1,4 +1,5 @@
 # G+ TikTok Downloader
+<img width="1771" height="921" alt="image" src="https://github.com/user-attachments/assets/bfee5069-6ebb-43d7-8385-a4b634cb534a" />
 
 A lightweight, seamless Tampermonkey userscript that allows you to download TikTok videos and photo slide posts in **High Definition (HD)**, completely **without watermarks**. 
 
