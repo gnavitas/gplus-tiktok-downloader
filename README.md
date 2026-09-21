@@ -1,34 +1,37 @@
 # G+ TikTok Downloader
-<img width="1771" height="921" alt="image" src="https://github.com/user-attachments/assets/bfee5069-6ebb-43d7-8385-a4b634cb534a" />
+<img width="612" height="905" alt="image" src="https://github.com/user-attachments/assets/1031bb20-cc97-4582-9658-e04244cc75dd" />
 
-A lightweight, seamless Tampermonkey userscript that allows you to download TikTok videos and photo slide posts in **High Definition (HD)**, completely **without watermarks**. 
+A Tampermonkey userscript that adds download functionality to TikTok. It allows you to download videos and photo slide posts in HD, without watermarks.
 
-It perfectly mimics the native TikTok UI by injecting a standard download action button right next to the Heart and Comment buttons.
+The script integrates seamlessly into the TikTok UI by adding a download button next to the native action buttons (Heart, Comment, Share).
+<img width="503" height="118" alt="image" src="https://github.com/user-attachments/assets/ae912d6d-a350-4a06-90f1-1ee5d5e725f2" />
+<img width="1522" height="876" alt="image" src="https://github.com/user-attachments/assets/f226037d-61e9-49f4-834e-119e0070bd33" />
 
 ## Features
-- 🚀 **HD Downloads:** Automatically fetches the highest quality 1080p source video via the `tikwm.com` API.
-- 🚫 **No Watermarks:** Videos are saved completely clean without the bouncing TikTok logo.
-- 📸 **Photo Support:** Automatically detects and downloads photo slideshow posts as high-quality images.
-- 🎨 **Native UI Integration:** Calculates the exact physical dimensions of the surrounding TikTok action buttons to generate a pixel-perfect, seamless download button.
-- 🛡️ **Virtual-DOM Proof:** Uses event delegation and smart DOM traversal to ensure the download button never breaks, even when scrolling infinitely through the "For You Page" (FYP).
-- 🏷️ **Clean File Naming:** Automatically renames your downloaded files using the `username-date-title` format.
+- **HD Downloads**: Fetches 1080p source videos via the `tikwm.com` API.
+- **No Watermarks**: Videos are saved without the TikTok logo.
+- **Photo Support**: Detects and downloads photo slideshow posts as high-quality images.
+- **Native UI**: Injects a download button that matches the styling and layout of the surrounding TikTok buttons.
+- **Reliable Integration**: Uses event delegation to ensure the download buttons remain functional when scrolling through the "For You" page (FYP).
+- **Bulk Profile Downloads**: Adds an option to the "More" (...) menu on user profiles, allowing you to sequentially download all loaded videos on the page into a dedicated folder.
+- **Clean Naming**: Saves files in the `username-date-title` format and organizes bulk downloads into folders named after the profile username.
 
 ## Installation
 
-1. Install a userscript manager like **[Tampermonkey](https://www.tampermonkey.net/)** for your browser.
-2. Create a new userscript in the Tampermonkey dashboard.
-3. Copy and paste the entire contents of `tiktok_downloader.user.js` into the editor.
-4. Save the script (`File -> Save` or `Ctrl+S`).
-5. Refresh TikTok, and you will see the new download button in the action bar!
+1. Install a userscript manager such as [Tampermonkey](https://www.tampermonkey.net/) in your browser.
+2. Open the Tampermonkey dashboard and create a new script.
+3. Copy the contents of `tiktok_downloader.user.js` and paste them into the editor.
+4. Save the script.
+5. Refresh TikTok. You should now see the download buttons on videos and in profile menus.
 
 ## How it works
 
-The script hooks into the DOM using an interval observer and scans for TikTok's native action buttons. It calculates the exact bounding box and layout rules applied by TikTok's CSS to inject an identical sibling element.
+The script uses a mutation observer to detect the native TikTok action buttons and injects a matching sibling element. 
 
-When clicked, the script uses a localized DOM traversal strategy (including checking unique video ID properties, `xgwrapper` tags, and anchor links) to safely identify the exact video URL the user intends to download without polluting the search with other videos on the page. Finally, it uses `GM_xmlhttpRequest` to bypass CORS and hit the `tikwm` HD endpoint.
+When a download is triggered, it parses the surrounding DOM to extract the video ID and uses `GM_xmlhttpRequest` to request the clean video file from the `tikwm` API.
 
-## Permissions Required
-The script requests `GM_xmlhttpRequest` and `GM_download` to bypass cross-origin restrictions when downloading video files directly to your computer.
+## Permissions
+The script requires `GM_xmlhttpRequest` and `GM_download` to bypass cross-origin restrictions and save files directly to your machine.
 
 ## Disclaimer
 This project is for educational purposes only. Ensure you have the right to download and use the media you acquire through this tool.
